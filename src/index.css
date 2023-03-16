@@ -1,0 +1,13 @@
+.card {
+  border: 1px solid #000;
+  border-radius: 2px;
+  padding: 5px;
+  text-align: center;
+  width: 150px;
+  background: #faebd7;
+  /* height: 0px; */
+}
+
+.card:hover {
+  cursor: pointer;
+}

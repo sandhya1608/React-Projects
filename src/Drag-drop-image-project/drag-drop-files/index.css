@@ -1,0 +1,71 @@
+.container {
+    background: #5e409e;
+    width: 100%;
+    font-family: arial;
+    font-size: 24px;
+    height: 100vh;
+    outline: dashed 1px black;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.drag-area {
+    border: 1px dashed;
+    width: 300px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    z-index: 9999;
+}
+
+.browse-button {
+    height: 2rem;
+    padding: 5px;
+    color: #052f72;
+    width: 100px;
+}
+
+.browse-button:hover {
+    cursor: pointer;
+    color: white;
+    background: #0084ff6b;
+}
+
+.drag-drop-input {
+    display: none;
+}
+
+.image-cross-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #300c52;
+    background: #fff;
+    cursor: pointer
+}
+
+.image-content {
+    font-size: 12px;
+    background: #300c52;
+    padding: 10px;
+    margin: 0;
+}
+
+.drag-file-element {
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: red;
+    width: 100%;
+    height: 100%;
+}
