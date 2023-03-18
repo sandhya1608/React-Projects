@@ -44,17 +44,14 @@
 }
 
 .image-cross-icon {
-    position: absolute;
-    top: 5px;
-    right: 5px;
     color: #300c52;
     background: #fff;
-    cursor: pointer
+    cursor: pointer;
+    margin: 10px;
 }
 
 .image-content {
     font-size: 12px;
-    background: #300c52;
     padding: 10px;
     margin: 0;
 }
