@@ -8,8 +8,11 @@ const DragDropImage = () => {
   const [files, setFiles] = useState([]);
   const [isDragging, setDragging] = useState(false);
 
+  const handleFile = (files) => {
+    setFiles((prevFiles) => [...prevFiles, ...Array.from(files)]);
+  }
   const handleOnInputChange = (e) => {
-    setFiles(Array.from(e.target.files));
+    handleFile(e.target.files);
   };
 
   const handleOnCrossClick = (index) => {
@@ -33,7 +36,7 @@ const DragDropImage = () => {
     e.stopPropagation();
     setDragging(false);
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      setFiles(Array.from(e.dataTransfer.files));
+      handleFile(e.dataTransfer.files);
     }
   };
 
@@ -67,27 +70,26 @@ const DragDropImage = () => {
           accept=".png, .jpg, .jpeg"  
         />
       </div>
-      <div style={{ display: "flex" }}>
+      <div>
         {files.map((file, index) => (
           <div
             key={index.toString()}
             style={{
               margin: "10px",
-              position: "relative",
-              background: "#300c52",
+              display: 'flex',
             }}
           >
+            <img
+              src={URL.createObjectURL(file)}
+              alt={file.name}
+              width={"40px"}
+              height={"40px"}
+            />
+            <p className="image-content">{file.name}</p>
             <AiFillCloseSquare
               className="image-cross-icon"
               onClick={() => handleOnCrossClick(index)}
             />
-            <img
-              src={URL.createObjectURL(file)}
-              alt={"image" + index}
-              width={"300px"}
-              height={"200px"}
-            />
-            <p className="image-content">{file.name}</p>
           </div>
         ))}
       </div>
